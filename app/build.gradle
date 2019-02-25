@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-def buildNumber = System.getenv("APPCENTER_BUILD_VERSION")
+def buildNumber = "1" ?: System.getenv("APPCENTER_BUILD_VERSION")
 
 
 android {
@@ -10,15 +10,8 @@ android {
         applicationId "com.example.appcenter.sampleapp_android"
         minSdkVersion 15
         targetSdkVersion 27
-        
-        if (System.getenv("TF_BUILD")) { 
-        
-        versionCode 1
-        }
-        else {
-        versionCode System.getenv("APPCENTER_BUILD_VERSION") 
+        versionCode buildNumber
    
-        }
        
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
