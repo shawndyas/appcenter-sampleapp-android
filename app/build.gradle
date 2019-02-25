@@ -10,9 +10,11 @@ android {
         
         if (System.getenv("APPCENTER_BUILD_VERSION") != null) { 
         versionCode System.getenv("APPCENTER_BUILD_VERSION") 
+        
         }
         else {
         versionCode 1
+        
         }
        
         versionName "1.0"
