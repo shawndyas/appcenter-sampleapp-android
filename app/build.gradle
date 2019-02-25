@@ -10,7 +10,7 @@ android {
         applicationId "com.example.appcenter.sampleapp_android"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode buildNumber
+        versionCode 123
    
        
         versionName "1.0"
