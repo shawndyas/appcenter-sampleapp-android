@@ -7,7 +7,14 @@ android {
         applicationId "com.example.appcenter.sampleapp_android"
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode System.getenv("APPCENTER_BUILD_VERSION")
+        
+        if (System.getenv("APPCENTER_BUILD_VERSION")) { 
+        versionCode System.getenv("APPCENTER_BUILD_VERSION") 
+        }
+        else {
+        versionCode 1
+        }
+       
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
