@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+def buildNumber = System.getenv("APPCENTER_BUILD_VERSION")
+
+
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
@@ -8,13 +11,13 @@ android {
         minSdkVersion 15
         targetSdkVersion 27
         
-        if (System.getenv("USER") != "vsts") { 
-        versionCode System.getenv("APPCENTER_BUILD_VERSION") 
+        if (System.getenv("TF_BUILD")) { 
         
+        versionCode 1
         }
         else {
-        versionCode 1
-        
+        versionCode System.getenv("APPCENTER_BUILD_VERSION") 
+   
         }
        
         versionName "1.0"
