@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-def buildNumber = System.getenv("APPCENTER_BUILD_VERSION")
+def buildNumber = 1 ?: System.getenv("APPCENTER_BUILD_VERSION")
 
 
 android {
