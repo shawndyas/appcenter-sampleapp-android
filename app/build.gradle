@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 
-def buildNumber = System.getenv("APPCENTER_BUILD_VERSION") 
+
 
 
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
+    def buildNumber = System.getenv("APPCENTER_BUILD_VERSION") 
     defaultConfig {
         applicationId "com.example.appcenter.sampleapp_android"
         minSdkVersion 15
